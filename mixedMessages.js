@@ -4,17 +4,16 @@ const gThree = ["I hope you are well. ", "Espero que estes bien. ", "Maika'i man
 const gFour = ["Bye!", "Adios!", "Aloha!", "Sayonara!", "Au revoir!"];
 
 
-function messageGenerator() {
-    let randIndex = Math.floor(Math.random()*gOne.length);
-    let message = gOne[randIndex];
-    randIndex = Math.floor(Math.random()*gTwo.length);
-    message += gTwo[randIndex];
-    randIndex = Math.floor(Math.random()*gThree.length);
-    message += gThree[randIndex];
-    randIndex = Math.floor(Math.random()*gFour.length);
-    message += gFour[randIndex];
-    return message;
+function randomArrayString(array) {
+    return array[Math.floor(Math.random()*array.length)];
 }
 
+function messageGenerator() {
+    let message = randomArrayString(gOne);
+    message += randomArrayString(gTwo);
+    message += randomArrayString(gThree);
+    message += randomArrayString(gFour);
+    return message;
+}
 
 console.log(messageGenerator());
